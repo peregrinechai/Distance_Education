@@ -13,7 +13,7 @@ library(flexdashboard) # always
 
 ## Intro {.sidebar data-width="375"}
 
-You can find the code for this dashboard at <https://github.com/peregrinechai/Distance_Education.git>
+You can find the code for this dashboard at [https://github.com/peregrinechai/Distance_Education](https://github.com/peregrinechai/Distance_Education.git){.uri}
 
 To explore the availability of distance education for undergraduates, I created a custom data set from the Integrated Postsecondary Education Data System. The final data set describes 2,706 institutions which meet the following criteria:
 

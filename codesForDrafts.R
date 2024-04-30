@@ -125,6 +125,7 @@ saveRDS(del3Draft, file = "del3Draft.rds")
 library(sf)
 library(plotly)
 library(usmap)
+library(paletteer)
 state_map <- usmap::us_map()
 
 head(state_map)
@@ -140,18 +141,16 @@ myMapDistEd=merge(state_map,state_tu, by.x="full", "State")
 
 base=ggplot(myMapDistEd)
 
-del4Draft=base + geom_sf(aes(fill=Median_Instate_Tuition)) + 
-  # scale_fill_viridis_c(direction = -1) +
-  # scale_fill_gradient(high = "black", low = "#FF80C6") +
-  scale_fill_gradient2(high = "darkblue", low = "deeppink4", mid = "white", midpoint = 20000) +
-  labs(title = "Where is Distance Education at 4-Year Schools the Cheapest?",
+del4Draft=base + geom_sf(aes(fill=Median_Instate_Tuition), color = "#242424") + 
+  scale_fill_viridis_c(option = "F", direction = -1) +
+  # scale_fill_paletteer_c("viridis::plasma", direction = 1) +
+  # scale_fill_gradient(high = "black", low = "white") +
+  # scale_fill_gradient2(high = "navyblue", low = "deeppink", mid = "violet", midpoint = 20000) +
+  labs(title = "Where does Distance Education at 4-Year Schools Cost the Most?",
        subtitle = "Median In-State Tuition (USD) for Full-Time Undergraduate Students, 2022",
        caption = sourceText, fill = "Tuition") +
   theme_void() + 
   theme(legend.position = c(0.065, 0.65))
-
-# interactive_map <- ggplotly(del4Draft, tooltip = "text")
-# interactive_map
 
 del4Draft
 
