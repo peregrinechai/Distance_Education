@@ -1,0 +1,63 @@
+---
+title: "Exploring Undergraduate Distance Education in US Schools"
+bibliography: testVisual.bib
+output: 
+  flexdashboard::flex_dashboard:
+    theme: united
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard) # always
+```
+
+## Sidebar {.sidebar data-width="375"}
+
+You can find the code for this dashboard at <https://github.com/peregrinechai/Distance_Education.git>
+
+To explore the availability of distance education for undergraduates, I created a custom data set from the Integrated Postsecondary Education Data System. The final data set describes 2,706 institutions which meet the following criteria:
+
+-   Grant undergraduate degrees (associate & bachelor degrees),
+
+-   Located in the United States (within one of the 50 states or District of Columbia), and
+
+-   At least 1 percent of the undergraduate population was enrolled exclusively in distance education during the 2021-22 academic year.
+
+### Key Takeaways
+
+-   For schools at or above the median (**22**) percentage of undergraduates pursuing distance education,
+
+    -   **45%** of these schools are in the public 2-year sector (community colleges).
+
+    -   **66%** of these schools are in the public sector.
+
+-   In-state tuition rates are generally **lower** at schools with high percentages of distance education undergraduates. 
+
+-   4-year schools are more prevalent than 2-year schools for very high rates of distance education undergraduates (75% and above).
+
+-   Tuition rates for in-state undergraduates at 4-year schools are highest in **Vermont** (median of \$42,860) and lowest in **Wyoming** (median of \$3,150).
+
+## Column {.tabset .tabset-fade}
+
+### Distance Education Rates
+
+```{r}
+readRDS("del2Draft.rds")
+```
+
+### Educational Sectors
+
+```{r}
+readRDS("del1Draft.rds")
+```
+
+### Tuition Rates Overall
+
+```{r}
+readRDS("del3Draft.rds")
+```
+
+### In-State Tuition for 4-Year Schools
+
+```{r}
+readRDS("del4Draft.rds")
+```
